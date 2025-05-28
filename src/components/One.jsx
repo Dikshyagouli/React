@@ -2,12 +2,14 @@ import React from "react";
 import Image from "../assets/participant1.jpg";
 
 const One = (props) => {
+  const cardStyle = props.mode === "dark" ? "card-dark" : "card-light";
+
   return (
     <div className={`bg-${props.mode}`}>
       <div className="container">
         <h4>This is our service</h4>
         <div className="col-md-3">
-          <div className={`card ${props.mode === "dark" ? "dark-text" : "light-text"}`}>
+          <div className={`card ${cardStyle}`}>
             <img src={Image} className="card-img-top" alt="..." />
             <div className="card-body">
               <h5 className="card-title">Card title</h5>

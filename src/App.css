@@ -1,30 +1,94 @@
 .title{
   color: purple;
 }
-.dark-text {
-  color: white;
-  background-color: #333;
-}
-
-.light-text {
-  color: black;
-  background-color: #eee;
-}
-
 .card {
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;
 }
-.dark-text {
-  background-color: #333 !important;
-  color: white !important;
+.card-dark {
+  background-color: #343a40;
+  color: white;
 }
 
-.light-text {
-  background-color: #f9f9f9 !important;
-  color: black !important;
+.card-light {
+  background-color: #ffffff;
+  color: black;
 }
+
 .small-banner {
   width: 100%;
 }
+.small-banner-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+.footer-bg {
+  background-color: #0e1a2b; 
+}
+
+.footer-bg .form-control {
+  max-width: 300px;
+}
+.footer-bg .social-icons svg {
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer-bg .social-icons svg:hover {
+  color: #dc3545; 
+}
+.hover-shadow:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.card.bg-secondary:hover {
+  background-color: #343a40 !important;
+}
+
+.gallery-item {
+  height: 200px;
+  cursor: pointer;
+  position: relative;
+}
+
+.gallery-img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+.testimonial-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+
+

@@ -1,12 +1,20 @@
 import React from "react";
 import Banner from "./Banner";
-import One from "./One";
+import AboutUs from "./AboutUs";
+import OurServices from "./OurServices";
+import GalleryWithModal from "./GalleryWithModal";
+import TestimonialSection from "./TestimonialSection";
+import Footer from "./Footer";
 
-const Home = () => {
+const Home = ({ mode }) => {
   return (
-    <div>
+    <div className={mode === "dark" ? "bg-dark text-light" : "bg-white text-dark"}>
       <Banner />
-      <One />
+      <AboutUs mode={mode} />
+      <OurServices mode={mode} />
+      <GalleryWithModal mode={mode} />
+      <TestimonialSection mode={mode} />
+      <Footer mode={mode} />
     </div>
   );
 };

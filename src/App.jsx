@@ -15,11 +15,14 @@ import Footer from "./components/Footer";
 import UserList from "./components/UserList";
 import UserDetails from "./components/UserDetails";
 import ProductState from "./context/ProductState";
+import { AuthProvider } from "./context/AuthContext";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 function App() {
   const [mode, setMode] = useState("dark");
   const [text, setText] = useState("Dark mode");
-  const [alert, setAlert] = useState(null);
+  const [ setAlert] = useState(null);
 
   const toggleMode = () => {
     if (mode === "dark") {
@@ -40,11 +43,11 @@ function App() {
 
   return (
     <div >
+      <AuthProvider>
       <ProductState>
       <Router>
         <Navbar mode={mode} toggleMode={toggleMode} text={text} />
         <ToastContainer />
-        <Alert alert={alert} />
 
         <div className="flex-grow-1">
           <Routes>
@@ -54,12 +57,15 @@ function App() {
             <Route path="/contact" element={<Contact mode={mode} />} />
             <Route path="/userlist" element={<UserList />} />
             <Route path="/:id/:username/:age" element={<UserDetails />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
           </Routes>
         </div>
 
         <Footer mode={mode} /> 
       </Router>
       </ProductState>
+      </AuthProvider>
     </div>
   );
 }

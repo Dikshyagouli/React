@@ -1,9 +1,9 @@
 import React from "react";
-import Banner from "./Banner";
-import AboutUs from "./AboutUs";
-import OurServices from "./OurServices";
-import GalleryWithModal from "./GalleryWithModal";
-import TestimonialSection from "./TestimonialSection";
+import Banner from "../components/Banner";
+import AboutUs from "../components/AboutUs";
+import OurServices from "../components/OurServices";
+import GalleryWithModal from "../components/GalleryWithModal";
+import TestimonialSection from "../components/TestimonialSection";
 
 const Home = ({ mode }) => {
   return (

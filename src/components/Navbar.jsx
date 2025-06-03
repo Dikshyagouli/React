@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
- import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = ({ title, mode, toggleMode, text }) => {
-  // console.log(mode);
-const notify = () => toast("Login Sucessfull");
+  const navigate = useNavigate();
+  const loginClicked = useRef(false); // flag to avoid multiple toasts
+
+  const handleLoginClick = () => {
+    if (loginClicked.current) return;
+    loginClicked.current = true;
+
+    toast.success("Login Page Opened", {
+      autoClose: 1000,
+      hideProgressBar: true,
+      pauseOnHover: false,
+      closeOnClick: true,
+    });
+
+    setTimeout(() => {
+      navigate("/login");
+      loginClicked.current = false;
+    }, 1000);
+  };
   return (
     <div>
       <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
@@ -92,7 +111,12 @@ const notify = () => toast("Login Sucessfull");
             <button onClick={toggleMode} className="btn btn-primary" style={{ marginRight: '10px'}}>
               {text}
             </button>
-            <button onClick={notify} className="btn btn-danger">Login</button>
+             <Link to="/Login">
+             <button className="btn btn-danger" onClick={handleLoginClick} style={{ marginRight: '10px'}}>Login</button>
+             </Link>
+             <Link to="/signup">
+             <button className="btn btn-success">Sign Up</button>
+             </Link>
           <ToastContainer />
           </div>
         </div>

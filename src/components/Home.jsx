@@ -4,7 +4,6 @@ import AboutUs from "./AboutUs";
 import OurServices from "./OurServices";
 import GalleryWithModal from "./GalleryWithModal";
 import TestimonialSection from "./TestimonialSection";
-import Footer from "./Footer";
 
 const Home = ({ mode }) => {
   return (

@@ -11,8 +11,10 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer"; // ✅ Import Footer
+import Footer from "./components/Footer"; 
 import UserList from "./components/UserList";
+import UserDetails from "./components/UserDetails";
+import ProductState from "./context/ProductState";
 
 function App() {
   const [mode, setMode] = useState("dark");
@@ -37,7 +39,8 @@ function App() {
   };
 
   return (
-    <div className={`min-vh-100 d-flex flex-column ${mode === 'dark' ? 'bg-dark text-light' : 'bg-white text-dark'}`}>
+    <div >
+      <ProductState>
       <Router>
         <Navbar mode={mode} toggleMode={toggleMode} text={text} />
         <ToastContainer />
@@ -49,12 +52,14 @@ function App() {
             <Route path="/about" element={<About mode={mode} />} />
             <Route path="/blog" element={<Blog mode={mode} />} />
             <Route path="/contact" element={<Contact mode={mode} />} />
-            <Route path="/userlist" element={<UserList mode={mode} />} />
+            <Route path="/userlist" element={<UserList />} />
+            <Route path="/:id/:username/:age" element={<UserDetails />} />
           </Routes>
         </div>
 
         <Footer mode={mode} /> 
       </Router>
+      </ProductState>
     </div>
   );
 }

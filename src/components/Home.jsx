@@ -14,7 +14,6 @@ const Home = ({ mode }) => {
       <OurServices mode={mode} />
       <GalleryWithModal mode={mode} />
       <TestimonialSection mode={mode} />
-      <Footer mode={mode} />
     </div>
   );
 };

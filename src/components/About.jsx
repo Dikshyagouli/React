@@ -4,6 +4,7 @@ import aboutImage from "../assets/participant1.jpg"
 
 const About = () => {
   let title = "About Us";
+  
   return (
     <div>
       <SmallBanner title={title} />

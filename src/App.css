@@ -89,6 +89,13 @@
   transform: translateY(-5px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
-
-
+.blogs-section{
+ padding: 80px 0px; 
+ color: #ffffff;
+}
+.blogs-section h4{
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
 

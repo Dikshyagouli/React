@@ -18,6 +18,9 @@ import ProductState from "./context/ProductState";
 import { AuthProvider } from "./context/AuthContext";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import CompanyFormPage from "./components/CompanyFormPage";
+import CartItems from "./components/CartIems";
+import AddProduct from "./components/Addproduct";
 
 function App() {
   const [mode, setMode] = useState("dark");
@@ -59,9 +62,12 @@ function App() {
             <Route path="/:id/:username/:age" element={<UserDetails />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/CompanyFormPage" element={<CompanyFormPage />} />
+            <Route path="/cartitems" element={<CartItems />} />
+            <Route path="/addproduct" element={<AddProduct />} />
           </Routes>
         </div>
-
+       
         <Footer mode={mode} /> 
       </Router>
       </ProductState>

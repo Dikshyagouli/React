@@ -1,28 +1,72 @@
-import React from "react";
+import React, { useReducer } from "react";
 import ProductContext from "./ProductContext";
+import { cartReducer } from "./Reducer";
 
 const ProductState = (props) => {
-  const product = {
-    id: 1,
-    name: "Apple",
-    description: "this is local product of mustang",
-    price: 200,
-  };
-  const [count, setCount] = React.useState(10);
+  const products = [
+    {
+      _id: 1,
+      title: "Apple",
+      description: "this is local product of mustang",
+      price: 200,
+      instock: 5,
+      image: "apple.jpg",
+    },
+    {
+      _id: 2,
+      title: "Mango",
+      description: "this is local product of terai",
+      price: 300,
+      instock: 5,
+      image: "mango.jpg",
+    },
+    {
+      _id: 3,
+      title: "Banana",
+      description: "this is local product of Gorkha",
+      price: 100,
+      instock: 2,
+      image: "banana.png",
+    },
+    {
+      _id: 4,
+      title: "Banana1",
+      description: "this is local product of Gorkha",
+      price: 200,
+      instock: 4,
+      image: "banana.png",
+    },
+  ];
 
-  const [news, setNews] = React.useState([]);
-  const fetchData = async () => {
-    const response = await fetch(
-      "https://newsapi.org/v2/top-headlines?country=us&apiKey=d125d26fbc6d49728775e0b977bddc5a"
-    );
-    const data = await response.json();
-    console.log("this is data from api", data.articles);
-    setNews(data.articles);
+  const [product, setProduct] = React.useState(products);
+
+  const [state, dispatch] = useReducer(cartReducer, {
+    products: product,
+    cart: [],
+  });
+
+  const allProduct = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:5000/api/product/getproduct",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            "auth-token": "your_token_here",
+          },
+        }
+      );
+      const data = await response.json();
+      setProduct(data);
+      console.log("data from backend response", data);
+    } catch (error) {
+      console.log("error", error);
+    }
   };
+
   return (
-    <ProductContext.Provider
-      value={{ product, count, setCount, news, fetchData }}
-    >
+    <ProductContext.Provider value={{ product, state, dispatch, allProduct }}>
       {props.children}
     </ProductContext.Provider>
   );

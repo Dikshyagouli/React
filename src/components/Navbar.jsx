@@ -1,12 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ProductContext from "../context/ProductContext";
 
 const Navbar = ({ title, mode, toggleMode, text }) => {
   const navigate = useNavigate();
-  const loginClicked = useRef(false); // flag to avoid multiple toasts
+  const loginClicked = useRef(false);    
 
   const handleLoginClick = () => {
     if (loginClicked.current) return;
@@ -24,6 +26,12 @@ const Navbar = ({ title, mode, toggleMode, text }) => {
       loginClicked.current = false;
     }, 1000);
   };
+  const context = useContext(ProductContext);
+
+  const {
+    state: { cart },
+  } = context;
+  console.log("nav  cart", cart);
   return (
     <div>
       <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
@@ -56,12 +64,17 @@ const Navbar = ({ title, mode, toggleMode, text }) => {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/blog">
-                  Blog
+                  Product
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/contact">
                   Contact
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/companyformpage">
+                  company-Registration
                 </Link>
               </li>
               <li className="nav-item dropdown">
@@ -108,14 +121,23 @@ const Navbar = ({ title, mode, toggleMode, text }) => {
                 Search
               </button>
             </form> */}
+            <Link to="/cartitems">
+              <button
+                type="button"
+                className="btn btn-primary mx-3 position-relative"
+              >
+                <FaShoppingCart />
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {cart.length}
+                  <span className="visually-hidden">unread messages</span>
+                </span>
+              </button>
+            </Link>
             <button onClick={toggleMode} className="btn btn-primary" style={{ marginRight: '10px'}}>
               {text}
             </button>
              <Link to="/Login">
              <button className="btn btn-danger" onClick={handleLoginClick} style={{ marginRight: '10px'}}>Login</button>
-             </Link>
-             <Link to="/signup">
-             <button className="btn btn-success">Sign Up</button>
              </Link>
           <ToastContainer />
           </div>

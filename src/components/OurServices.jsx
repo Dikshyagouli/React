@@ -5,18 +5,18 @@ import service3 from "../assets/service3.jpg";
 
 const services = [
   {
-    title: "Real-Time News",
-    description: "Stay updated with the latest headlines, breaking news, and developments from around the world.",
+    title: "Fresh Produce Delivery",
+    description: "We deliver handpicked fruits and vegetables straight to your door fresh from local farms and packed with care.",
     image: service1,
   },
   {
-    title: "In-Depth Analysis",
-    description: "We dive deep into topics that matter, providing context and expert commentary.",
+    title: "Organic & Seasonal Options",
+    description: "Shop a variety of organic, seasonal, and pesticide-free produce sourced sustainably.",
     image: service2,
   },
   {
-    title: "Multimedia Stories",
-    description: "Enjoy engaging stories enhanced with images, videos, and interactive visuals.",
+    title: " Eco-Friendly Packaging",
+    description: "We care for the planet. Your orders come in recyclable, minimal-waste packaging.",
     image: service3,
   },
 ];
@@ -31,7 +31,7 @@ const OurServices = ({ mode }) => {
           Our <span className="text-warning">Services</span>
         </h2>
         <p className={`text-center mb-5 ${isDark ? "text-light" : "text-muted"}`}>
-          We provide a wide range of services to ensure our audience gets accurate, timely, and engaging content.
+          We offer a wide range of services to ensure our customers receive the freshest produce, convenient delivery, and a seamless shopping experience every time.
         </p>
 
         <div className="row g-4">

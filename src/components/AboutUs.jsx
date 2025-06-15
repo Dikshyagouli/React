@@ -23,7 +23,7 @@ const AboutUs = ({ mode }) => {
               About <span className="text-warning">Us</span>
             </h2>
             <p className={isDark ? "text-light" : "text-muted"}>
-              We are a dynamic and driven team committed to sharing stories that shape our world...
+              Freshness you can taste, quality you can trust.
             </p>
 
             <div className="row mt-4">
@@ -36,7 +36,12 @@ const AboutUs = ({ mode }) => {
                       Our Mission
                     </h5>
                     <p className={`card-text ${isDark ? "text-light" : "text-muted"}`}>
-                      To inform and empower audiences through accurate reporting...
+                      Deliver farm-fresh fruits and veggies to every home.
+Promote healthy eating and natural living.
+Support local farmers and eco-friendly practices.
+Make freshness accessible, affordable, and easy.
+
+
                     </p>
                   </div>
                 </div>
@@ -51,16 +56,15 @@ const AboutUs = ({ mode }) => {
                       Our Vision
                     </h5>
                     <p className={`card-text ${isDark ? "text-light" : "text-muted"}`}>
-                      To be a trusted voice in media, recognized for integrity...
+                     To be the most trusted name in fresh produce online.
+Connect people with nature’s best, every day.
+Empower communities through healthy choices.
+Build a sustainable, greener tomorrow.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-
-            <p className={`mt-3 ${isDark ? "text-light" : "text-muted"}`}>
-              Our values are rooted in transparency, excellence...
-            </p>
           </div>
         </div>
       </div>

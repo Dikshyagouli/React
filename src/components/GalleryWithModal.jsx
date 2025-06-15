@@ -19,14 +19,14 @@ const detailImages = {
 };
 
 const categories = [
-  { name: "Paintings", image: paintings },
-  { name: "Photography", image: photography },
-  { name: "Drawings", image: drawings },
-  { name: "Digital Art", image: digitalArt },
-  { name: "Sculptures", image: sculptures },
-  { name: "Pottery", image: pottery },
-  { name: "Glass", image: glass },
-  { name: "Jewelry", image: jewelry },
+  { name: "Fresh Fruits", image: paintings },
+  { name: "Seasonal Vegetables", image: photography },
+  { name: "Farm-to-Home Journey", image: drawings },
+  { name: "Happy Customers", image: digitalArt },
+  { name: "Eco-Friendly Packaging", image: sculptures },
+  { name: "Local Farmers’ Stories", image: pottery },
+  { name: "Giveaways", image: glass },
+  { name: "Behind the Scenes", image: jewelry },
 ];
 
 const GalleryWithModal = ({ mode }) => {

@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 const AddProduct = () => {
   const [product, setProduct] = React.useState({
@@ -11,6 +12,34 @@ const AddProduct = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("form submit");
+    const formData = new formData()
+    formData.append('title',product.title)
+    formData.append('description',product.description)
+    formData.append('price',product.price)
+    formData.append('instock',product.instock) 
+    if (product.image) {
+      formData.append('image',product.image)
+    }
+    try{
+      const response = axios.post(
+        "http://localhost:3001/api/produts",
+        formData,
+        {
+          headers: {
+            //content type: multipart/formdata
+            "auth-token": "1234567890",
+          },
+        }
+      );
+      console.log(response.data);
+      if (response) {
+        alert("Product Added Successfully");
+      } else {
+        alert("Error");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleChange = (e) => {

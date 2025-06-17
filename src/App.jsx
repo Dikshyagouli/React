@@ -21,6 +21,7 @@ import Signup from "./pages/Signup";
 import CompanyFormPage from "./components/CompanyFormPage";
 import CartItems from "./components/CartIems";
 import AddProduct from "./components/Addproduct";
+import CompanyFormWithPreview from "./components/CompanyFormWithPreview"
 
 function App() {
   const [mode, setMode] = useState("dark");
@@ -62,6 +63,7 @@ function App() {
             <Route path="/:id/:username/:age" element={<UserDetails />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/CompanyFormWithPreview" element={<CompanyFormWithPreview />} />
             <Route path="/CompanyFormPage" element={<CompanyFormPage />} />
             <Route path="/cartitems" element={<CartItems />} />
             <Route path="/addproduct" element={<AddProduct />} />

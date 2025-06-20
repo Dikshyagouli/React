@@ -34,7 +34,6 @@ const Navbar = ({ title, mode, toggleMode }) => {
   return (
     <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode} shadow-sm `}>
       <div className="container-fluid">
-        {/* Left: Logo */}
         <Link className="navbar-brand d-flex align-items-center" to="/">
           <img
             src={logo}
@@ -43,8 +42,6 @@ const Navbar = ({ title, mode, toggleMode }) => {
           />
           <span className="fw-bold text-success fs-4">{title}</span>
         </Link>
-
-        {/* Toggler for mobile */}
         <button
           className="navbar-toggler"
           type="button"
@@ -56,8 +53,6 @@ const Navbar = ({ title, mode, toggleMode }) => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-
-        {/* Centered Nav Links + Right Section */}
         <div className="collapse navbar-collapse" id="navbarContent">
           <ul className="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3 text-center">
             <li className="nav-item">
@@ -76,8 +71,6 @@ const Navbar = ({ title, mode, toggleMode }) => {
               <Link className="nav-link fw-semibold" to="/companyformpage">Register</Link>
             </li>
           </ul>
-
-          {/* Right: Icons and Login */}
           <div className="d-flex align-items-center justify-content-center gap-2 mt-3 mt-lg-0">
             <Link to="/cartitems">
               <button className="btn btn-outline-primary position-relative">

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const express = require('express')//common js modal
 const dotenv = require("dotenv");
 const { chats } = require('./data/data'); 
@@ -25,7 +26,7 @@ app.get("/chats/:id", (req, res) => {
 })
 app.use("/api/auth", require("./routes/Auth"));
 app.use("/api/product", require("./routes/Products"));
-
+app.use("/api/cart", require("./routes/Cart") )
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const express = require("express");
 const Product = require("../model/Product");
 const fetchUser = require("../middleware/FetchUser");
@@ -11,7 +12,7 @@ router.post("/addproduct", fetchUser, async (req, res) => {
       price,
       description,
       instock,
-      user: user.id,
+      user: req.user.id,
     });
     const saveProduct = await product.save();
     res.status(201).json({ saveProduct });

@@ -1,5 +1,4 @@
-/* eslint-disable no-undef */
-const express = require('express')//common js modal
+const express = require('express')/
 const dotenv = require("dotenv");
 const { chats } = require('./data/data'); 
 const dbConnect= require("./config/db")
